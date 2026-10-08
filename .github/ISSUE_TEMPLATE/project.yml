@@ -1,0 +1,82 @@
+name: Submit a project
+description: Suggest a project for the TooExpensive.dev directory.
+title: "[Project] "
+labels: [needs-review]
+body:
+  - type: markdown
+    attributes:
+      value: "Submissions are public and reviewed before listing. Do not include private information or credentials."
+  - type: input
+    id: project
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website or documentation URL
+      placeholder: https://example.com
+  - type: input
+    id: repository
+    attributes:
+      label: Source repository URL
+      description: Provide a website or repository (at least one). Hosted services may leave this blank.
+      placeholder: https://github.com/owner/project
+  - type: input
+    id: developer
+    attributes:
+      label: Developer name and profile URL
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your relationship to this project
+      options:
+        - I maintain or contribute to it
+        - I use it or recommend it
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What job does it do?
+      description: A short, factual description and the paid tool or workflow it could replace. Note important differences.
+    validations:
+      required: true
+  - type: dropdown
+    id: uses
+    attributes:
+      label: Use tags
+      multiple: true
+      options:
+        - Portfolio websites
+        - Photography
+        - Photo libraries
+        - Wildlife
+        - Gear research
+        - Photo editing
+        - Project management
+        - Photo layouts
+        - Desktop tools
+        - Browser tools
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: costs
+    attributes:
+      label: License, pricing, and hosting
+      description: Link to the license or pricing page. Explain free/paid options, self-hosting costs, and any limitations. Suggest other tags here if needed.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Before submitting
+      options:
+        - label: I included at least one working website or repository URL.
+          required: true
+        - label: I understand this issue is public and listing requires maintainer review.
+          required: true
