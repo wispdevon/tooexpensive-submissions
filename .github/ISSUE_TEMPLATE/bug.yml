@@ -1,0 +1,24 @@
+name: Report a website issue
+description: Report a bug or incorrect listing on TooExpensive.dev.
+title: "[Website] "
+body:
+  - type: markdown
+    attributes:
+      value: "Reports are public. Do not include access tokens, cookies, private files or personal information. For private concerns, email wispdevon@proton.me."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What went wrong?
+      description: Include the page URL or project name and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Steps, browser and device, if applicable.
+  - type: textarea
+    id: details
+    attributes:
+      label: Extra details
+      description: Optional screenshots or error text, with sensitive information removed.
