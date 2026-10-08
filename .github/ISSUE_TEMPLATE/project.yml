@@ -5,7 +5,7 @@ labels: [needs-review]
 body:
   - type: markdown
     attributes:
-      value: "Submissions are public and reviewed before listing. Do not include private information or credentials."
+      value: "Submissions are public. Eligible repository-owner submissions can be listed automatically after objective checks; others require maintainer review. Do not include private information or credentials."
   - type: input
     id: project
     attributes:
@@ -61,6 +61,10 @@ body:
         - Photo layouts
         - Desktop tools
         - Browser tools
+        - AI assistants
+        - AI tools
+        - Developer tools
+        - Image generation
         - Other (describe below)
     validations:
       required: true
@@ -72,11 +76,19 @@ body:
     validations:
       required: true
   - type: checkboxes
+    id: automatic
+    attributes:
+      label: Automatic listing
+      description: Optional. Automatic listing uses your repository's name, description, license, and GitHub owner profile. Leave the website URL blank for repository-only auto-listing. Organizations, forks, hosted services, and recommendations require manual review.
+      options:
+        - label: I agree to automatic listing after objective checks pass.
+          required: false
+  - type: checkboxes
     id: confirmation
     attributes:
       label: Before submitting
       options:
         - label: I included at least one working website or repository URL.
           required: true
-        - label: I understand this issue is public and listing requires maintainer review.
+        - label: I understand this issue is public and listing requires automated checks or maintainer review.
           required: true
